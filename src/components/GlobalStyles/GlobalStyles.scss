@@ -10,6 +10,7 @@
 
     --black: #000;
     --text-color: #333;
+    --white: #fff;
 }
 
 * {
@@ -39,5 +40,5 @@ input,
 
 a[href] {
     color: var(--text-color);
-    text-align: none;
+    text-decoration: none;
 }

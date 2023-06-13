@@ -9,6 +9,7 @@ import images from '~/assets/images';
 import { useEffect, useState } from 'react';
 import { Wrapper as PoperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(style);
 
@@ -19,7 +20,7 @@ function Header() {
         setTimeout(() => {
             setSearchResult([]);
         }, 0);
-    }, [searchResult]);
+    }, []);
 
     return (
         <header className={cx('wrapper')}>
@@ -54,7 +55,10 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Button text>Upload</Button>
+                    <Button primary>Login</Button>
+                </div>
             </div>
         </header>
     );
