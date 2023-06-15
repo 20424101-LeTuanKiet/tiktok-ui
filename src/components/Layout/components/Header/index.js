@@ -9,7 +9,6 @@ import {
     faCircleQuestion,
     faKeyboard,
     faMessage,
-    faCloudArrowUp,
     faUser,
     faCoins,
     faGear,
@@ -27,6 +26,8 @@ import { Wrapper as PoperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -105,7 +106,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo.default} alt="tiktok" />
+                    <img src={images.logo} alt="tiktok" />
                 </div>
                 <HeadlessTippy
                     visible={searchResult.length > 0}
@@ -140,7 +141,7 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                             <button className={cx('action-btn')}>
@@ -156,7 +157,7 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEM} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt="thoa"
                                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0094032b899e8d5a889f33adb3a828af~c5_300x300.webp?x-expires=1686718800&x-signature=OxdR9%2FJYnHJVizosn7856wRE%2BDg%3D"
