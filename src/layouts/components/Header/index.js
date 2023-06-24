@@ -32,7 +32,7 @@ const MENU_ITEM = [
         icon: <FontAwesomeIcon icon={faEarthAsia} />,
         title: 'English',
         children: {
-            title: 'Languege',
+            title: 'Language',
             data: [
                 {
                     type: 'language',
