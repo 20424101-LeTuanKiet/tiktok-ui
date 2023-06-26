@@ -35,6 +35,22 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
         });
     };
 
+    const renderResult = (attrs) => (
+        <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+            <PoperWrapper className={cx('menu-poper')}>
+                {history.length > 1 && (
+                    <Header
+                        title={current.title}
+                        onBack={() => {
+                            setHistory((prev) => prev.slice(0, prev.length - 1));
+                        }}
+                    />
+                )}
+                <div className={cx('menu-body')}>{renderItems()}</div>
+            </PoperWrapper>
+        </div>
+    );
+
     return (
         <Tippy
             interactive
@@ -42,21 +58,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             offset={[8, 12]}
             hideOnClick={hideOnClick}
             placement="bottom-end"
-            render={(attrs) => (
-                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <PoperWrapper className={cx('menu-poper')}>
-                        {history.length > 1 && (
-                            <Header
-                                title={current.title}
-                                onBack={() => {
-                                    setHistory((prev) => prev.slice(0, prev.length - 1));
-                                }}
-                            />
-                        )}
-                        <div className={cx('menu-body')}>{renderItems()}</div>
-                    </PoperWrapper>
-                </div>
-            )}
+            render={renderResult}
             onHide={() => {
                 if (history.length > 1) {
                     setHistory((prev) => prev.slice(0, prev.length - 1));
