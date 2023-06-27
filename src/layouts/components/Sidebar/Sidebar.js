@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import config from '~/config';
 
-import style from './Sidebar.module.scss';
+import styles from './Sidebar.module.scss';
 import Menu, { MenuItem } from './Menu';
 
 import {
@@ -12,8 +12,9 @@ import {
     UserGroupActiveIcon,
     LiveActiveIcon,
 } from '~/components/Icons';
+import SuggestedAccounts from '~/components/SuggestedAccounts';
 
-const cx = classNames.bind(style);
+const cx = classNames.bind(styles);
 
 function Sidebar() {
     return (
@@ -28,6 +29,8 @@ function Sidebar() {
                 />
                 <MenuItem title="Live" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
+            <SuggestedAccounts label="Tài khoản được đề xuất"></SuggestedAccounts>
+            <SuggestedAccounts label="Tài khoản đã theo dõi"></SuggestedAccounts>
         </aside>
     );
 }
