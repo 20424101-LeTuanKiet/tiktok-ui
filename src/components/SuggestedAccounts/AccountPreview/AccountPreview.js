@@ -4,7 +4,7 @@ import Button from '~/components/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
-import avatar from '../../../../public/avatar.jpeg';
+import avatar from '~/avatar.jpeg';
 
 const cx = classNames.bind(styles);
 
