@@ -4,17 +4,15 @@ import Button from '~/components/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
+import avatar from '../../../../public/avatar.jpeg';
+
 const cx = classNames.bind(styles);
 
 function AccountPreview() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('header')}>
-                <img
-                    className={cx('avatar')}
-                    src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/3a520d85dcc472a86abd7af728a311b3~c5_100x100.jpeg?x-expires=1688040000&x-signature=q%2BOQQzaWo9%2FZo0GRnoKpurmm4Bs%3D"
-                    alt=""
-                />
+                <img className={cx('avatar')} src={avatar} alt="" />
                 <div>
                     <Button className={cx('follow-btn')} primary small>
                         Follow
